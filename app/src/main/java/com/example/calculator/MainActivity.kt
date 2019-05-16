@@ -8,7 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     var history = ""
     var number1 = ""
@@ -28,29 +28,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val button0 = findViewById<Button>(R.id.button0)
-        button0.setOnClickListener(clickListener)
-        val button1 = findViewById<Button>(R.id.button1)
-        button1.setOnClickListener(clickListener)
-        val button2 = findViewById<Button>(R.id.button2)
-        button2.setOnClickListener(clickListener)
-        val button3 = findViewById<Button>(R.id.button3)
-        button3.setOnClickListener(clickListener)
-        val button4 = findViewById<Button>(R.id.button4)
-        button4.setOnClickListener(clickListener)
-        val button5 = findViewById<Button>(R.id.button5)
-        button5.setOnClickListener(clickListener)
-        val button6 = findViewById<Button>(R.id.button6)
-        button6.setOnClickListener(clickListener)
-        val button7 = findViewById<Button>(R.id.button7)
-        button7.setOnClickListener(clickListener)
-        val button8 = findViewById<Button>(R.id.button8)
-        button8.setOnClickListener(clickListener)
-        val button9 = findViewById<Button>(R.id.button9)
-        button9.setOnClickListener(clickListener)
-        val buttonDOT = findViewById<Button>(R.id.buttonDOT)
-        buttonDOT.setOnClickListener(clickListener)
 
         val buttonADD = findViewById<Button>(R.id.buttonADD)
         val buttonSUB = findViewById<Button>(R.id.buttonSUB)
@@ -157,8 +134,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    val clickListener = View.OnClickListener { view ->
-        when(view.id){
+    override fun onClick(v: View?) {
+        when(v?.id){
             R.id.button0 -> et_result.setText(et_result.text.toString() + 0)
             R.id.button1 -> et_result.setText(et_result.text.toString() + 1)
             R.id.button2 -> et_result.setText(et_result.text.toString() + 2)
