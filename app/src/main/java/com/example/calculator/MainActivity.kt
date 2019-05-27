@@ -100,7 +100,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         buttonDEL.setOnClickListener {
             var del_num = et_result.text.toString()
             Toast.makeText(this, del_num, Toast.LENGTH_LONG).show()
-            et_result.setText(del_num.substring(0, del_num.length -1))
+//            et_result.setText(del_num.substring(0, del_num.length -1))
+            if (del_num.length > 0){
+                et_result.setText(del_num.substring(0, del_num.length -1))
+            } else{
+                Toast.makeText(this, "no text to erase", Toast.LENGTH_LONG).show()
+            }
         }
 
         buttonRES.setOnClickListener {
