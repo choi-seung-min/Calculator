@@ -108,6 +108,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         buttonRES.setOnClickListener {
+            //i didn't think about this when i made editText
+            //so it doesn't work well if you push result button successively
             var result = 0.0
             number2 = et_result.text.toString()
             history += et_result.text.toString()
