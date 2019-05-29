@@ -98,11 +98,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         buttonDEL.setOnClickListener {
-            var del_num = et_result.text.toString()
-            Toast.makeText(this, del_num, Toast.LENGTH_LONG).show()
-//            et_result.setText(del_num.substring(0, del_num.length -1))
-            if (del_num.length > 0){
-                et_result.setText(del_num.substring(0, del_num.length -1))
+            var delNum = et_result.text.toString()
+            Toast.makeText(this, delNum, Toast.LENGTH_LONG).show()
+            if (delNum.length > 0){
+                et_result.setText(delNum.substring(0, delNum.length -1))
             } else{
                 Toast.makeText(this, "no text to erase", Toast.LENGTH_LONG).show()
             }
@@ -113,7 +112,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             number2 = et_result.text.toString()
             history += et_result.text.toString()
 
-            et_result.setText(history)
+//            et_result.setText(history)
 
             d1 = number1.toDouble()
             d2 = number2.toDouble()
